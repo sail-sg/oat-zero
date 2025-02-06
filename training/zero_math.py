@@ -13,7 +13,7 @@ class ZeroMathActor(PPOActor):
 
         # Special treatment to sample from a base model - now only cover Qwen.
         self.sampling_params.stop = (
-            ["</s>", "<|im_end|>", "<|endoftext|>"]
+            ["</s>", "<|im_end|>", "<|endoftext|>", "\nUser:"]
             if "qwen" in args.pretrain.lower()
             else []
         )
@@ -21,14 +21,14 @@ class ZeroMathActor(PPOActor):
             [151645, 151643] if "qwen" in args.pretrain.lower() else []
         )
 
-        # self.eval_sampling_params.stop = (
-        #     ["</s>", "<|im_end|>", "<|endoftext|>"]
-        #     if "qwen" in args.pretrain.lower()
-        #     else []
-        # )
-        # self.eval_sampling_params.stop_token_ids = (
-        #     [151645, 151643] if "qwen" in args.pretrain.lower() else []
-        # )
+        self.eval_sampling_params.stop = (
+            ["</s>", "<|im_end|>", "<|endoftext|>", "\nUser:"]
+            if "qwen" in args.pretrain.lower()
+            else []
+        )
+        self.eval_sampling_params.stop_token_ids = (
+            [151645, 151643] if "qwen" in args.pretrain.lower() else []
+        )
 
 
 def run_ppo(args: PPOArgs):

@@ -1,6 +1,10 @@
-# oat-zero
+# There May Not be Aha Moment in R1-Zero-like Training — A Pilot Study
 
-Blog: [![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](notion_link)
+<!-- Blog: [![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](notion_link) -->
+
+**Blog:** <a href="notion_link">
+    <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" width="80" style="vertical-align: middle;">
+</a>
 
 [Installation](#installation) | [Experiments](#experiments) | [Acknowledgement](#acknowledgement) | [Citation](#citation) 
 
@@ -11,10 +15,10 @@ One of the most inspiring results from DeepSeek-R1-Zero is the occurrence of “
 Within only a few days after R1-Zero's release, several projects independently “reproduced” R1-Zero-like training on smaller scales (e.g., 1B to 7B) and all observed the Aha moment, which is typically measured by ***a sudden increase of model response length***. We follow their settings to scrutinize the R1-Zero-like training process, and share the following findings:
 
 1. **There may NOT be Aha moment in R1-Zero-like training.** Instead, we found Aha moment (such as self-reflection patterns) appears at epoch 0, namely base models.
-2. We found **Superficial Self-Reflection (SSR)** from base models’ responses, in which case self-reflections do not necessarily lead to correct final answers.
+2. We found **Superficial Self-Reflection (SSR)** from base models' responses, in which case self-reflections do not necessarily lead to correct final answers.
 3. We took **a closer look at R1-Zero-like training via RL**, and found that the increasing response length phenomenon is not due to the emergence of self-reflection, but a consequence of RL optimizing well-designed rule-based reward functions.
 
-![oat-zero-results](./asset/oat-zero-results.png)
+![oat-zero-results](./asset/oat-zero-results.jpg)
 
 > (Left) A detailed analysis on the distribution and average length of different response groups. (Right) RL curves of test reward and model response length.
 
