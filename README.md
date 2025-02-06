@@ -24,14 +24,17 @@ Within only a few days after R1-Zero's release, several projects independently â
 
 ## Installation
 
-Before installing `oat-zero`, please install `oat` following the instructions in https://github.com/sail-sg/oat. 
-
-Once `oat` is installed, install `oat-zero` by running the following command:
+Our implementation is based on [Oat](https://github.com/sail-sg/oat). Run the following command to install `oat`:
 
 ```console
-git clone https://github.com/sail-sg/oat-zero.git
-cd oat-zero
-pip install -e .
+pip install vllm==0.6.2 && pip install oat-llm
+```
+Or you could also install in "editable" mode for local development:
+
+```console
+git clone https://github.com/sail-sg/oat.git
+cd oat
+pip install vllm==0.6.2 && pip install -e .
 ```
 
 ## Experiments
@@ -55,13 +58,18 @@ TODO: add links to sec 3.1 and 3.2
 To reproduce the results of Oat-Zero at Sec. 3.1, run: 
 
 ```console
-bash training/run_grpo_7b.sh
+bash training/run_grpo.sh
 ```
 
 To reproduce the results at Sec. 3.2, please follow the instructions in [simpleRL/train](https://github.com/hkust-nlp/simpleRL-reason/tree/main/train). 
 
 ## Acknowledgement
 
+- [Oat](https://github.com/sail-sg/oat): Used for fast reproducing the R1-Zero-like training results on the Countdown task.
+- [simpleRL](https://github.com/hkust-nlp/simpleRL-reason): Used for reproducing the SimpleRL-Zero results on MATH.
+- [TinyZero](https://github.com/Jiayi-Pan/TinyZero): Referring to the implementation of reward model and Countdown task.
+- [vLLM](https://github.com/vllm-project/vllm): Used for the accelerated inference.
+- We thank the developers of DeepSeek, Qwen, Rho and Llama for bringing the innovative techniques and performant models in our community. 
 
 ## Citation
 
