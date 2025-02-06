@@ -2,7 +2,7 @@
 
 <!-- Blog: [![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](notion_link) -->
 
-**Blog:** <a href="notion_link">
+**Blog:** <a href="https://oatllm.notion.site/oat-zero">
     <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" width="80" style="vertical-align: middle;">
 </a>
 
@@ -53,15 +53,13 @@ Simply run the script with the model name as the argument.
 
 ### Reproducing Oat-Zero
 
-TODO: add links to sec 3.1 and 3.2
-
-To reproduce the results of Oat-Zero at Sec. 3.1, run: 
+To reproduce the results of Oat-Zero on Countdown task (Sec. 3.1 in our [blog](https://oatllm.notion.site/oat-zero)), run: 
 
 ```console
 bash training/run_grpo.sh
 ```
 
-To reproduce the results at Sec. 3.2, please follow the instructions in [simpleRL/train](https://github.com/hkust-nlp/simpleRL-reason/tree/main/train). 
+To reproduce the results in Sec. 3.2, please follow the instructions in [simpleRL/train](https://github.com/hkust-nlp/simpleRL-reason/tree/main/train). 
 
 ## Acknowledgement
 
@@ -73,14 +71,12 @@ To reproduce the results at Sec. 3.2, please follow the instructions in [simpleR
 
 ## Citation
 
-TODO: add url
-
 ```bibtex
 @misc{liu2025oatzero,
   title={There May Not be Aha Moment in R1-Zero-like Training — A Pilot Study},
   author={Zichen Liu and Changyu Chen and Wenjun Li and Tianyu Pang and Chao Du and Min Lin},
   year={2025},
-  howpublished={\url{https://notion.site}},
+  howpublished={\url{https://oatllm.notion.site/oat-zero}},
   note={Notion Blog},
 }
 ```
