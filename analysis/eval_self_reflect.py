@@ -5,9 +5,7 @@ import re
 import fire
 import numpy as np
 import vllm
-from oat_zero.qwen_math_eval_toolkit.grader import math_equal
-from oat_zero.qwen_math_eval_toolkit.parser import \
-    extract_answer as math_extract_answer
+from math_grader import boxed_reward_fn, grade
 from tabulate import tabulate
 from transformers import AutoTokenizer
 
@@ -24,15 +22,9 @@ def preprocess_box_response_for_qwen_prompt(sequence, answer):
     for stop_word in stop_words:
         if stop_word in model_output:
             model_output = model_output.split(stop_word)[0].strip()
-    extract_answer = math_extract_answer(model_output, data_name="math")
-
-    if math_equal(prediction=extract_answer, reference=answer):
-        box_match = 1.0
-    else:
-        box_match = -0.5
-
-    if "boxed" not in model_output:
-        box_match = -1.0
+    
+    # grader
+    _, box_match = boxed_reward_fn(model_response=model_output, gt_answer=answer)
 
     return "", box_match
 
@@ -45,12 +37,12 @@ def preprocess_box_response_for_r1(sequence, answer):
     else:
         extracted_answer = None
     if extracted_answer is None:
-        return "", -1
+        return -1
     else:
-        if math_equal(prediction=extracted_answer, reference=answer):
-            return "", 1
+        if grade(prediction=extracted_answer, reference=answer):
+            return 1
         else:
-            return "", -0.5
+            return -0.5
 
 
 def main(
