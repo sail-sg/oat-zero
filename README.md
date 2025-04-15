@@ -72,9 +72,9 @@ To reproduce the results in Sec. 3.2, please follow the instructions in [simpleR
 ## Citation
 
 ```bibtex
-@misc{liu2025oatzero,
+@misc{liu2025there,
   title={There May Not be Aha Moment in R1-Zero-like Training — A Pilot Study},
-  author={Zichen Liu and Changyu Chen and Wenjun Li and Tianyu Pang and Chao Du and Min Lin},
+  author={Liu, Zichen and Chen, Changyu and Li, Wenjun and Pang, Tianyu and Du, Chao and Lin, Min},
   year={2025},
   howpublished={\url{https://oatllm.notion.site/oat-zero}},
   note={Notion Blog},
